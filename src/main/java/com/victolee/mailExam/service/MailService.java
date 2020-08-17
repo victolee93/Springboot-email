@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class MailService {
     private JavaMailSender mailSender;
-    private static final String FROM_ADDRESS = "dntmddlekd48@gmail.com";
+    private static final String FROM_ADDRESS = "YOUR_EMAIL_ADDRESS";
 
     public void mailSend(MailDto mailDto) {
         try {
@@ -23,7 +23,7 @@ public class MailService {
             // 제목
             mailHandler.setSubject(mailDto.getTitle());
             // HTML Layout
-            String htmlContent = "<p>" + mailDto.getMessage() +"<p> <img src='cid:sample-img'>";
+            String htmlContent = "<p>" + mailDto.getMessage() + "<p> <img src='cid:sample-img'>";
             mailHandler.setText(htmlContent, true);
             // 첨부 파일
             mailHandler.setAttach("newTest.txt", "static/originTest.txt");
